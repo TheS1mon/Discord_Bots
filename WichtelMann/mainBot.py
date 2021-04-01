@@ -45,6 +45,9 @@ async def check_for_birthdays_once_a_day():
     curDate = datetime.now()
     curDate = curDate.strftime("%d.%m")
     print(curDate)
+
+    for birthday in birthdayList[1]:
+        print(str(birthday - curDate))
     
 
 
@@ -71,10 +74,10 @@ async def on_message(message):
                     line = line.replace("\n", "")
                     name, birthday = line.split(':')
                     tmpBirthdayArray = birthday.split('.')
-                    birthdayDate = datetime.date(2020, int(tmpBirthdayArray[1]), int(tmpBirthdayArray[0])) # Geburtstag als datetime
-                    birthdayDate = birthdayDate.strftime("%d.%m")
+                    birthdayDateTime = datetime.date(2020, tmpBirthdayArray[1], tmpBirthdayArray[0]) # Geburtstag als datetime
+                    birthdayDateTime = birthdayDateTime.strftime("%d.%m")
                     birthdayList[0].append(name)
-                    birthdayList[1].append(birthdayDate)
+                    birthdayList[1].append(birthdayDateTime)
 
             namesInList = ""
             selection = ""
