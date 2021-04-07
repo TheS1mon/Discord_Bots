@@ -37,9 +37,9 @@ async def on_ready():
    channel_wanderwichtelanmeldung = client.get_channel(796390311168835607)
    channel_wichtelBotBefehle = client.get_channel(796441844933460059)
    birthdayList = [[],[],[]] # [0] name, [1] birthday, [2] giftbringer
+   # check_for_birthdays_once_a_day.start()
 
-#   check_for_birthdays_once_a_day.start()
-
+# Automatische Erinnerung
 #@tasks.loop(hours=24)
 #async def check_for_birthdays_once_a_day():
 #    curDate = datetime.now()
